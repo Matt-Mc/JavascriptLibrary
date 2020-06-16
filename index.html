@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="titleHolder">
+            <h1 class="TitleOfPage">Javascript Library</h1>
+            <button id="addBook" class="addBook">Add Book</button>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <div id="holder" class="columns is-desktop is-multiline">
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <button class="delete is-danger" id="ModalClose"></button>
+                <div class="field">
+                    <label class="label">Book Title</label>
+                    <div class="control">
+                        <input class="input" id="bookTitleInput" type="text" placeholder="What's the book called?">
+                    </div>
+              </div>
+              <div class="field">
+                <label class="label">Author</label>
+                <div class="control">
+                    <input class="input" id="bookAuthorInput" type="text" placeholder="Who wrote the book?">
+                </div>
+
+                <div class="field">
+                    <label class="label">Pages</label>
+                    <div class="control">
+                        <input class="input" id="bookPagesInput" type="text" placeholder="How many pages in the book?">
+                    </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <label class="radio">
+                      Have you read the Book? </br>
+                    <input type="radio" name="question" id="COMP">
+                    Yes
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="question" id="NOT">
+                    No
+                  </label>
+                </div>
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button id="Submit" class="button is-link">Submit</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-light" id="ModalClose">Cancel</button>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+
+  
+
+        <script src="js/lib.js" async defer></script>
+    </body>
+</html>
