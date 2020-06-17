@@ -1,6 +1,7 @@
 const addBook = document.querySelector("#addBook")
 const modelClose = document.querySelectorAll("#ModalClose")
 const submitButton = document.querySelector("#Submit")
+const deleteBook = document.querySelectorAll("#delete")
 
 let myLibrary = [];
 
@@ -17,7 +18,6 @@ function Book(title, author, pages, haveRead) {
     }
 }
 
-document.querySelector
 
 
 function addBookToLibrary() {
@@ -34,14 +34,8 @@ function addBookToLibrary() {
         compornah = "Uncompleted"
     }
 
-
-
     let newBook = new Book(bookTitle, bookAuthor, bookPages, compornah)
-
     myLibrary.push(newBook);
-    console.log(newBook.title)
-    console.log(newBook.author)
-
     render()
 }
 
@@ -60,6 +54,10 @@ function render() {
 
     var deleteButton = document.createElement('button');
     deleteButton.setAttribute('class', 'delete');
+    deleteButton.setAttribute('id', 'delete');
+    deleteButton.addEventListener("click", (e) => {
+        removeBook(e)
+    })
     notification.appendChild(deleteButton);
 
     var bookTitle = document.createElement('h1');
@@ -78,12 +76,41 @@ function render() {
     notification.appendChild(bookPages);
 
     var completeButton = document.createElement('button');
-    completeButton.setAttribute('class', 'completeButton');
     completeButton.innerHTML = book.haveRead;
+
+
+    if(completeButton.innerHTML == "Completed"){
+        completeButton.innerHTML = "Completed"
+        completeButton.setAttribute('class', 'completeButton');
+    }else{
+        completeButton.innerHTML = "Uncompleted"
+        completeButton.setAttribute('class', 'Uncompleted');
+    }
+
+    completeButton.addEventListener("click", (e) => {
+        compOrNah(e)
+    })
     notification.appendChild(completeButton);
 
 
 }
+
+
+function removeBook(e){
+    e.target.parentNode.parentNode.remove(e.target.parentNode.parentNode);
+}
+
+function compOrNah(e){
+    if(e.target.innerHTML == "Completed"){
+        e.target.innerHTML = "Uncompleted"
+        e.target.setAttribute('class', 'Uncompleted');
+    }else{
+        e.target.innerHTML = "Completed"
+        e.target.setAttribute('class', 'completeButton');
+    }
+}
+
+
 
 addBook.addEventListener("click", (e) => {
     const modal = document.querySelector("#myModal")
